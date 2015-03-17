@@ -21,9 +21,8 @@ class Updater
   def self.run
     timestamp = (DateTime.now - 365).strftime('%Q').to_i
     POSTS.each do |post|
-      # post = client.get_post(post)
-      # require 'pry'; binding.pry
-      post = client.update_post(post[:url], {
+      puts "Updating #{post[:url]}..."
+      client.update_post(post[:url], {
         publishTimeMillis: timestamp,
         defaultBlogId: post[:blog_id]
       })
