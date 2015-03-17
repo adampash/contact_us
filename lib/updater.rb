@@ -19,7 +19,7 @@ class Updater
   end
 
   def self.run
-    timestamp = (DateTime.now - 365).strftime('%Q').to_i
+    timestamp = DateTime.now.strftime('%Q').to_i
     POSTS.each do |post|
       puts "Updating #{post[:url]}..."
       client.update_post(post[:url], {
