@@ -19,7 +19,9 @@ class Updater
   end
 
   def self.run
-    timestamp = DateTime.now.strftime('%Q').to_i
+    return unless should_update?
+    now = DateTime.now
+    timestamp = now.strftime('%Q').to_i
     POSTS.each do |post|
       puts "Updating #{post[:url]}..."
       client.update_post(post[:url], {
@@ -27,6 +29,18 @@ class Updater
         defaultBlogId: post[:blog_id]
       })
     end
+  end
+
+  def self.should_update?(date=DateTime.now)
+    is_weekday?(date) or is_morning?(date)
+  end
+
+  def self.is_weekday?(date=DateTime.now)
+    date.strftime('%u').to_i < 6
+  end
+
+  def self.is_morning?(date=DateTime.now)
+    date.strftime('%k').to_i < 15
   end
 
   def self.time_to_update(now, update_time)
