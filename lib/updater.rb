@@ -4,7 +4,10 @@ Dotenv.load
 
 class Updater
   POSTS = [
-    "http://gemtest.kinja.com/gawker-1687581385"
+    {
+      url: "http://gawker.com/dont-forget-you-can-email-us-tips-at-tips-gawker-com-1605185791",
+      blog_id: 7
+    }
   ]
 
   def self.client
@@ -16,8 +19,14 @@ class Updater
   end
 
   def self.run
+    timestamp = (DateTime.now - 365).strftime('%Q').to_i
     POSTS.each do |post|
-      client.update_post(post, publishTimeMillis: DateTime.now.strftime('%Q').to_i)
+      # post = client.get_post(post)
+      # require 'pry'; binding.pry
+      post = client.update_post(post[:url], {
+        publishTimeMillis: timestamp,
+        defaultBlogId: post[:blog_id]
+      })
     end
   end
 
