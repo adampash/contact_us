@@ -12,10 +12,10 @@ class Updater
       url: "http://deadspin.com/have-something-you-think-we-should-know-email-us-at-ti-1695073772",
       blog_id: 11
     },
-    # {
-    #   url: "http://gawker.com/dont-forget-you-can-email-us-tips-at-tips-gawker-com-1605185791",
-    #   blog_id: 7
-    # },
+    {
+      url: "http://io9.com/just-a-reminder-you-can-email-us-news-and-info-any-tim-1695100689",
+      blog_id: 8
+    },
   ]
 
   def self.client
