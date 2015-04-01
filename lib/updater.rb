@@ -7,7 +7,15 @@ class Updater
     {
       url: "http://gawker.com/dont-forget-you-can-email-us-tips-at-tips-gawker-com-1605185791",
       blog_id: 7
-    }
+    },
+    {
+      url: "http://deadspin.com/have-something-you-think-we-should-know-email-us-at-ti-1695073772",
+      blog_id: 11
+    },
+    # {
+    #   url: "http://gawker.com/dont-forget-you-can-email-us-tips-at-tips-gawker-com-1605185791",
+    #   blog_id: 7
+    # },
   ]
 
   def self.client
