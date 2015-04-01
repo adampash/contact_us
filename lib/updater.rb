@@ -16,6 +16,10 @@ class Updater
       url: "http://io9.com/just-a-reminder-you-can-email-us-news-and-info-any-tim-1695100689",
       blog_id: 8
     },
+    {
+      url: "http://kotaku.com/hey-listen-you-can-e-mail-us-tips-at-tips-kotaku-com-1695106732",
+      blog_id: 9
+    },
   ]
 
   def self.client
@@ -29,7 +33,8 @@ class Updater
   def self.run
     return unless should_update?
     now = DateTime.now
-    timestamp = now.strftime('%Q').to_i
+    five_before = (now.to_time - 300).to_datetime
+    timestamp = five_before.strftime('%Q').to_i
     POSTS.each do |post|
       puts "Updating #{post[:url]}..."
       client.update_post(post[:url], {
