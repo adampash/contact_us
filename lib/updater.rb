@@ -20,6 +20,10 @@ class Updater
       url: "http://kotaku.com/hey-listen-you-can-e-mail-us-tips-at-tips-kotaku-com-1695106732",
       blog_id: 9
     },
+    {
+      url: "http://jezebel.com/have-a-story-idea-or-some-information-you-think-we-shou-1707533526",
+      blog_id: 39
+    },
   ]
 
   def self.client
