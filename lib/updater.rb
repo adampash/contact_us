@@ -41,10 +41,11 @@ class Updater
     timestamp = five_before.strftime('%Q').to_i
     POSTS.each do |post|
       puts "Updating #{post[:url]}..."
-      client.update_post(post[:url], {
+      result = client.update_post(post[:url], {
         publishTimeMillis: timestamp,
         defaultBlogId: post[:blog_id]
       })
+      puts result
     end
   end
 
