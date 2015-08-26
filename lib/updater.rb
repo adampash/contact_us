@@ -24,6 +24,10 @@ class Updater
       url: "http://jezebel.com/have-a-story-idea-or-some-information-you-think-we-shou-1707533526",
       blog_id: 39
     },
+    {
+      url: "http://jalopnik.com/so-we-wrote-an-ebook-jalopnik-s-book-of-car-facts-and-1726631201",
+      blog_id: 12
+    },
   ]
 
   def self.client
