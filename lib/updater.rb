@@ -24,6 +24,10 @@ class Updater
       url: "http://jezebel.com/have-a-story-idea-or-some-information-you-think-we-shou-1707533526",
       blog_id: 39
     },
+    {
+      url: "http://gizmodo.com/don-t-forget-you-can-email-us-tips-at-tips-gawker-com-1763615386",
+      blog_id: 4
+    },
     # {
     #   url: "http://jalopnik.com/so-we-wrote-an-ebook-jalopnik-s-book-of-car-facts-and-1726631201",
     #   blog_id: 12
